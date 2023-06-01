@@ -4,4 +4,6 @@
   
   For example, find the best place to study. We can measure the space, the view, the comfort level of chairs and desks, and how many students that usually study here, and any other aspects that may affect our study envrionment and passion. light, bulb light and natural light. the height of chairs and desks, how it is close to human body. individual study or team work. temperature. student seating capacity
 
-2. Using twitter, finding popular events that are happening in the area
+2. Using twitter, finding popular events that are happening in the area. 
+  For example, based on yoir recent likes and posts, reccomend a concert or a sporting event you can attend to. First, we can send the twitter feed to Watson or any other IBM database or API that will scan the keywords or content that a person is consuming. Then, make a search through a database like ticketmaster, or a event search hub that will return what events are happening within the area that matches the users interests.
+  For example, maybe if someone shares and likes a lot of Celtics content, fins nearby games, stores or events related to the celtics. If someone likes to run maybe find races nearby. It uses twitter as third party, and data from event sites. 
