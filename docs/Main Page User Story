@@ -1,0 +1,3 @@
+Once the Log In story is complete, the User is redirected to our main page. if the user has less than 5 liked tweets, a message will appear.
+This message explains that there is not enough information on twitter to be able to see their interests. So teh user has to go and like tweets and log in again. 
+If the User does have more than 5 liked tweets, he needs to define where he wants to be shown events. there will be a look bar for input at top of the page. 
