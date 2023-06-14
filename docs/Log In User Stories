@@ -1,0 +1,5 @@
+1. The first User story is Log in. 
+The user will attempt to enter our webiste viaa HTTP request, to which he will be redericeted to his Twitter Log in page.
+A twitter account is neccesary to be able to access our website. 
+The user will prompt in his Twitter User name as well as his password. Then a popo up will appear and here he will be asked if he wishes to share his liked tweets and twiter information to our page.
+if he does not agree then he will be logged out. He will also be logged out in case that he does not put correctly his twitter credentials. 
