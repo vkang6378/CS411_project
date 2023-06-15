@@ -27,7 +27,6 @@ app.use(authRoutes);
 app.use(userRoutes);
 
 // Add route to make the API request
-/*
 app.get('/search', async (req, res) => {
   const searchTerm = req.query.term;
 
@@ -51,7 +50,6 @@ app.post('/search', express.json(), async (req, res) => {
       res.json({ error: err.message });
     }
 });
-*/
 
 // Start the server
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
