@@ -1,1 +1,2 @@
-
+For this project, we are using node.js for the backend and MySQL for the data structure. 
+The main reason for choosing node.js was becasue it allows us to use JavaScript. A lot of us already had experience with 
