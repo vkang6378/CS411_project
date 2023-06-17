@@ -1,2 +1,17 @@
-For this project, we are using node.js for the backend and MySQL for the data structure. 
-The main reason for choosing node.js was becasue it allows us to use JavaScript. A lot of us already had experience with 
+For this project, we're using Node.js for the backend and MySQL for our data structure. The main reason for picking Node.js 
+is its support for JavaScript, a language many of us were already familiar with. Given our time constraints and the need to 
+avoid a steep learning curve with a new language, it seemed like the ideal choice. Moreover, as JavaScript is used for both 
+frontend and backend, it can streamline the development process. Node.js is also renowned for its speed and efficiency, and 
+it excels with real-time applications, which is why it's widely used by web developers.
+
+We picked MySQL because it's a powerful, free, open-source database management system, with ACID compliance, which indicates 
+its high reliability when dealing with transactional data. MySQL is also efficient and known for its speedy data processing 
+abilities, which can handle multiple user requests or interactions with the Twitter API effectively. One of its possible drawbacks 
+might be its performance with extremely large, unstructured data, but this isn't a concern for our project since the data set 
+we're dealing with isn't anywhere near that scale.
+
+
+
+
+
+
