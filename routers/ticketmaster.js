@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const ticketmasterAPIKey = 'null';
 
-router.get('/taylor-swift-concerts', async (req, res) => {
+router.get('/events', async (req, res) => {
   try {
     const response = await axios.get(
       `https://app.ticketmaster.com/discovery/v2/events.json?keyword=Taylor%20Swift&apikey=${ticketmasterAPIKey}`
