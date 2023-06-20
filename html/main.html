@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Following List and Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f5f5f5;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Twitter Following List and Events</h1>
+
+  <h2>Twitter Following List</h2>
+  <ul id="following-list"></ul>
+
+  <h2>Events</h2>
+  <table id="concerts-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Venue</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody id="concerts-body"></tbody>
+  </table>
+
+  <script>
+    // Fetch the Twitter following list from the API endpoint
+    fetch('/api/following')
+      .then(response => response.json())
+      .then(data => {
+        const followingList = document.getElementById('following-list');
+        data.following.forEach(username => {
+          const listItem = document.createElement('li');
+          listItem.textContent = username;
+          followingList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.error('Error retrieving Twitter following list:', error);
+        const followingList = document.getElementById('following-list');
+        const errorMessage = document.createElement('li');
+        errorMessage.className = 'error-message';
+        errorMessage.textContent = 'Failed to retrieve Twitter following list';
+        followingList.appendChild(errorMessage);
+      });
+
+    // Fetch the Taylor Swift concerts data from the API endpoint
+    fetch('/api/taylor-swift-concerts')
+      .then(response => response.json())
+      .then(data => {
+        const concertsTable = document.getElementById('concerts-table');
+        const concertsBody = document.getElementById('concerts-body');
+
+        // Loop through each concert and create a table row
+        data.concerts.forEach(concert => {
+          const row = document.createElement('tr');
+          const nameCell = document.createElement('td');
+          const dateCell = document.createElement('td');
+          const timeCell = document.createElement('td');
+          const venueCell = document.createElement('td');
+          const cityCell = document.createElement('td');
+          const countryCell = document.createElement('td');
+
+          nameCell.textContent = concert.name;
+          dateCell.textContent = concert.date;
+          timeCell.textContent = concert.time;
+          venueCell.textContent = concert.venue;
+          cityCell.textContent = concert.city;
+          countryCell.textContent = concert.country;
+
+          row.appendChild(nameCell);
+          row.appendChild(dateCell);
+          row.appendChild(timeCell);
+          row.appendChild(venueCell);
+          row.appendChild(cityCell);
+          row.appendChild(countryCell);
+
+          concertsBody.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('Error retrieving Taylor Swift concerts:', error);
+        const concertsTable = document.getElementById('concerts-table');
+        const errorMessage = document.createElement('tr');
+        const errorCell = document.createElement('td');
+        errorCell.className = 'error-message';
+        errorCell.textContent = 'Failed to retrieve Taylor Swift concerts';
+        errorCell.colSpan = 6;
+        errorMessage.appendChild(errorCell);
+        concertsTable.appendChild(errorMessage);
+      });
+  </script>
+</body>
+</html>
+
