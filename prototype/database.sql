@@ -8,8 +8,10 @@ USE event_recommendation;
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
+  passport_id VARCHAR(20),
   location VARCHAR(100),
-  CONSTRAINT username_unique UNIQUE (username)
+  CONSTRAINT username_unique UNIQUE (username),
+  CONSTRAINT passport_id UNIQUE (passport_id)
 );
 
 --Create the liked_posts table
